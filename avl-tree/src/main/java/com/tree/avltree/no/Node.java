@@ -13,8 +13,17 @@ public class Node {
         this.right = right;
     }
     public void evalPos(int valor){
-       valor
+        if(left == null || right == null){
+           if(valor > this.valor)
+               this.right = new Node(valor);
+           if(valor > this.valor)
+               this.right = new Node(valor);
+        }
 
+        if (valor < this.valor)
+            left.evalPos(valor);
+        else if (valor > this.valor)
+            right.evalPos(valor);
 
     }
 }
